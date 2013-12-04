@@ -1,0 +1,8 @@
+services:
+    newscoop_donations_plugin.lifecyclesubscriber:
+        class: Newscoop\DonationsPluginBundle\EventListener\LifecycleSubscriber
+        arguments:
+            - @em
+        tags:
+            - { name: kernel.event_subscriber}
+
