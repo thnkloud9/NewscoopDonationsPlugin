@@ -41,7 +41,7 @@ function smarty_function_pay_what_you_like($p_params, &$p_smarty)
         $amount = $p_params['amount'];
     }
 
-    $mustLogin = getGS('You must login to use this feature!');
+    $mustLogin = 'You must login to use this feature!';
     $markup = '';
 
     if (!defined('PAY_WHAT_YOU_LIKE_JS_SET')) {
@@ -57,8 +57,6 @@ $(function()
 JS;
         define('PAY_WHAT_YOU_LIKE_JS_SET', true);
     }
-
-    //taking out the getGS('') because we want to get rid really fast of the (*) signs
 
     $classes = isset($p_params['classes']) ? (string) $p_params['classes'] : '';
     $linktext = 'tageswoche.ch honorieren';
