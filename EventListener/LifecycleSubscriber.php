@@ -69,8 +69,6 @@ class LifecycleSubscriber implements EventSubscriberInterface
     }
 
     private function getClasses(){
-        return array(
-            $this->em->getClassMetadata('Newscoop\DonationsPluginBundle\Entity\Donationsstat'),
-        );
+        return array();
     }
 }
