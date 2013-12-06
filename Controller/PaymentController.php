@@ -19,6 +19,7 @@ class PaymentController extends Controller
             'currency' => '', 'language' => '', 'orderID' => '', 
             'PSPID' => '');
         $form = $this->createFormBuilder($defaultData)
+            ->setMethod('POST')
             ->add('accepturl', 'hidden')
             ->add('amount', 'hidden')
             ->add('currency', 'hidden')
