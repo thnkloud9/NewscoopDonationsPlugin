@@ -36,7 +36,7 @@ class PaymentController extends Controller
             'realAmount' => round($amount/100, 2),
             'language' => $language,
             'orderId' => $orderId,
-            'PPSID' => $PSPID,
+            'PSPID' => $PSPID,
             'SHASign' => $SHASign,
         ));
     }
