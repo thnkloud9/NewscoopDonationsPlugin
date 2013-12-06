@@ -49,7 +49,7 @@ class PaymentController extends Controller
 
         var_dump($SHASign);
 
-        return true;
+        return $this->render('NewscoopDonationsPluginBundle:Default:postfinance.html.smarty');
     }
 
 
