@@ -16,13 +16,14 @@ class PaymentController extends Controller
     public function postfinanceAction(Request $request)
     {
 
-        if( !isset($reguest->get('accepturl'), $request->get('amount'),
-	        $request->get('currency'), $request->get('language'),
-	        $request->get('orderID'), $request->get('PSPID')
-        ) {
+        if (!$reguest->get('accepturl') || 
+            !$request->get('amount') || 
+            !$request->get('currency') || 
+            !$request->get('language') || 
+            !$request->get('orderID') || 
+            !$request->get('PSPID')) {
 			die('Forbidden');        	
         }
-        
         
         $shaPass = 'nzzonline123456#$';
         
@@ -47,10 +48,8 @@ class PaymentController extends Controller
     	$this->view->SHASign = $SHASign;
         */
 
-        var_dump($SHASign);
+        //var_dump($SHASign);
 
         return $this->render('NewscoopDonationsPluginBundle:Default:postfinance.html.smarty');
     }
-
-
 }
