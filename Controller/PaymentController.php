@@ -54,8 +54,8 @@ class PaymentController extends Controller
     	$this->view->SHASign = $SHASign;
         */
 
-        return $shaString;
+        var_dump($shaString);
 
-        //return $this->render('NewscoopDonationsPluginBundle:Default:postfinance.html.smarty');
+        return $this->render('NewscoopDonationsPluginBundle:Default:postfinance.html.smarty');
     }
 }
