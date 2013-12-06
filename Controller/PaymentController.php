@@ -15,9 +15,6 @@ class PaymentController extends Controller
      */
     public function postfinanceAction(Request $request)
     {
-        $defaultData = array('accepturl' => '', 'amount' => '', 
-            'currency' => '', 'language' => '', 'orderID' => '', 
-            'PSPID' => '');
         $form = $this->createFormBuilder()
             ->setMethod('POST')
             ->add('accepturl', 'hidden')
@@ -27,10 +24,10 @@ class PaymentController extends Controller
             ->add('orderID', 'hidden')
             ->add('PSPID', 'hidden')
             ->getForm();
-        if ($request->getMethod() == 'POST') {
+        //if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
             $data = $form->getData();
-        }
+        //}
 
         $shaPass = 'nzzonline123456#$';
         
