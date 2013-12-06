@@ -47,7 +47,9 @@ class PaymentController extends Controller
     	$this->view->SHASign = $SHASign;
         */
 
-        print $SHASign;
+        var_dump($SHASign);
+
+        return true;
     }
 
 
