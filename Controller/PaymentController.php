@@ -33,7 +33,7 @@ class PaymentController extends Controller
         return $this->render('NewscoopDonationsPluginBundle:Default:postfinance.html.smarty', array(
             'amount' => $amount,
             'accepturl' => $accepturl,
-            'realAmount' => $round($amount/100, 2),
+            'realAmount' => round($amount/100, 2),
             'language' => $language,
             'orderId' => $orderId,
             'PPSID' => $PSPID,
