@@ -15,28 +15,14 @@ class PaymentController extends Controller
      */
     public function postfinanceAction(Request $request)
     {
-        $form = $this->createFormBuilder()
-            ->setMethod('POST')
-            ->add('accepturl', 'hidden')
-            ->add('amount', 'hidden')
-            ->add('currency', 'hidden')
-            ->add('language', 'hidden')
-            ->add('orderID', 'hidden')
-            ->add('PSPID', 'hidden')
-            ->getForm();
-        //if ($request->getMethod() == 'POST') {
-            $form->handleRequest($request);
-            $data = $form->getData();
-        //}
-
         $shaPass = 'nzzonline123456#$';
         
-        $accepturl = $data['accepturl'];
-        $amount = $data['amount'];
-        $currency = $data['currency'];
-        $language = $data['language'];
-        $orderId = $data['orderID'];
-        $PSPID = $data['PSPID'];
+        $accepturl = $request->get('accepturl');
+        $amount = $request->get('amount');
+        $currency = $request->get('currency');
+        $language = $request->get('language');
+        $orderId = $request->get('orderID');
+        $PSPID = $request->get('PSPID');
         
         $shaString = "ACCEPTURL=".$accepturl.$shaPass."AMOUNT=".$amount.$shaPass."CURRENCY=".$currency.$shaPass."LANGUAGE=".$language.$shaPass."ORDERID=".$orderId.$shaPass."PSPID=".$PSPID.$shaPass;
         
@@ -54,6 +40,14 @@ class PaymentController extends Controller
 
         var_dump($shaString);
 
-        return $this->render('NewscoopDonationsPluginBundle:Default:postfinance.html.smarty');
+        return $this->render('NewscoopDonationsPluginBundle:Default:postfinance.html.smarty', array(
+            'amount' => $amount,
+            'accepturl' => $accepturl,
+            'realAmount' => $round($amount/100, 2),
+            'language' => $language,
+            'orderID' => $orderID,
+            'PSID' => $PSID,
+            'SHASign' => $SHASign,
+        ));
     }
 }
