@@ -27,7 +27,7 @@ class PaymentController extends Controller
             ->add('PSPID', 'hidden')
             ->getForm();
         if ($request->getMethod() == 'POST') {
-            $form->handleRequest(($request);
+            $form->handleRequest($request);
             $data = $form->getData();
         }
 
