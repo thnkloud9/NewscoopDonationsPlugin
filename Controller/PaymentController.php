@@ -28,25 +28,15 @@ class PaymentController extends Controller
         
     	$SHASign = sha1($shaString);
         
-        /*	
-    	$this->view->amount = $amount;
-    	$this->view->accepturl = $accepturl;
-    	$this->view->realAmount = round($amount/100, 2);
-    	$this->view->language = $language;
-    	$this->view->orderID = $orderId;
-    	$this->view->PSPID = $PSPID;
-    	$this->view->SHASign = $SHASign;
-        */
-
-        var_dump($shaString);
+        //var_dump($shaString);
 
         return $this->render('NewscoopDonationsPluginBundle:Default:postfinance.html.smarty', array(
             'amount' => $amount,
             'accepturl' => $accepturl,
             'realAmount' => $round($amount/100, 2),
             'language' => $language,
-            'orderID' => $orderID,
-            'PSID' => $PSID,
+            'orderId' => $orderId,
+            'PPSID' => $PSPID,
             'SHASign' => $SHASign,
         ));
     }

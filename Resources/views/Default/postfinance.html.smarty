@@ -35,15 +35,14 @@ height: 75px;
         method="post"
         action="https://e-payment.postfinance.ch/ncol/prod/orderstandard.asp"
 d="PSForm"><!-- general parameters --> <input type="hidden"
-        name="PSPID" value="PSPID"> <input type="hidden"
-        name="orderID" value='orderID'> <input
-        type="hidden" name="amount" value="amount"> <input
+        name="PSPID" value="{{ $PSPID }}"> <input type="hidden"
+        name="orderID" value='{{ $orderId}}'> <input
+        type="hidden" name="amount" value="{{ $amount }}"> <input
         type="hidden" name="currency" value="CHF"> <input type="hidden"
-        name="language" value="language"> <!-- check before the payment: see Security: Check before the Payment -->
-    <input type="hidden" name="SHASign"
-        value="SHASign" id='SHASign'> <!-- post payment redirection: see Transaction Feedback to the Customer -->
-    <input type="hidden" name="accepturl"
-        value="accepturl"> <input type="submit"
+        name="language" value="{{ $language }}">
+    <input type="hidden" name="SHASign" value="{{ $SHASign }}" id='SHASign'> 
+    <input type="hidden" name="accepturl" value="{{ $accepturl }}"> 
+    <input type="submit"
         id="submit2" name="submit2" value="Postfinance"
         style="background-color: #FFCC00; font-weight: bold; color: black; float: left; margin-left: 130px; margin-top: -25px;">
     </form>
