@@ -92,7 +92,7 @@ JS;
 
 
 	//BUILDING THE SHASign
-	$shaEncodePath =  $GLOBALS['Campsite']['SUBDIR'].'/postfinance';
+	$shaEncodePath =  $GLOBALS['Campsite']['SUBDIR'].'/plugin/donations/postfinance';
 
 
 
