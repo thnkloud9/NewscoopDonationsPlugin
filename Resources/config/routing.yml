@@ -1,0 +1,4 @@
+newscoop_donations_plugin:
+    resource: "@NewscoopDonationsPluginBundle/Controller/"
+    type: annotation
+    prefix: /
