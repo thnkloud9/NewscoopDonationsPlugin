@@ -15,6 +15,9 @@ class PaymentController extends Controller
      */
     public function postfinanceAction(Request $request)
     {
+        $defaultData = array('accepturl' => '', 'amount' => '', 
+            'currency' => '', 'language' => '', 'orderID' => '', 
+            'PSPID' => '');
         $form = $this->createFormBuilder($defaultData)
             ->add('accepturl', 'hidden')
             ->add('amount', 'hidden')
