@@ -25,7 +25,7 @@ height: 75px;
 <div class="main">
 
     <div style='width:100%; padding:10px;'>
-    <strong>Gesamtbetrag: PH_REALAMOUNT CHF</strong>
+    <strong>Gesamtbetrag: {{ $realAmount }}</strong>
     </div>
 
     <input
