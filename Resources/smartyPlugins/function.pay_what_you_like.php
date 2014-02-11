@@ -8,11 +8,11 @@
 function smarty_function_pay_what_you_like($p_params, &$p_smarty)
 {
     // get request params for checking the return from payment site
-    $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
+    $params = \Zend_Registry::get('container')->get('request')->request;
     $orderId = str_replace(".", "", uniqid('', true));
     $acceptMsg = '';
     $acceptUrl = 'http://'.$_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'].'?payment=yes';
-    $js = '';
+    $js = '';x
     if (array_key_exists('payment', $params)) {
     	if ($params['payment'] == 'yes') {
     		$js = "
